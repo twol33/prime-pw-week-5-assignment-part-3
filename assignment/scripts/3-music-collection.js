@@ -1,5 +1,6 @@
 console.log('***** Music Collection *****')
 
+// addToCollection function start
 let collection = []
 
 function addToCollection(title, artist, yearPublished){
@@ -8,7 +9,7 @@ function addToCollection(title, artist, yearPublished){
     artist: artist,
     yearPublished: yearPublished,
   }
-  collection.push( musicBox)
+  collection.push( musicBox )
   return musicBox;
 }
 console.log('Only I: ', addToCollection('Budda', 'James Pollock', '2021'));
@@ -19,15 +20,9 @@ console.log('Eat: ', addToCollection('Yellow', 'Garth Creek', '2017'));
 console.log('Roasted Corn: ', addToCollection('Corn', 'Joe Penninsula', '2016'));
 
 console.log(collection);
-
 // addToCollection function completed
 
-//Add a function named showCollection. This function should:
-
-//Take in an array parameter. (This allows it to be reused to show any collection, like the results from the find or search.)
-//Console.log the number of items in the array.
-//Loop over the array and console.log each album's information formatted like: TITLE by ARTIST, published in YEAR.
-
+// showCollection function start
 function showCollection( title ) {
   console.log( 'Items in array: ', collection.length );
 
@@ -36,3 +31,22 @@ function showCollection( title ) {
   }
 }
 showCollection()
+// showCollection function completed
+
+// findByArtist function start
+
+let nameList = []
+
+function findByArtist( artist ){
+  for( i=0; i<collection.length; i++)
+  if( artist === collection[i].artist){
+  nameList.push( collection[i] )
+  return nameList ;
+}
+  else{
+    return nameList = [];
+  }
+}
+
+console.log('Find James Pollock', findByArtist('James Pollock'));
+console.log('Find Michael Bay', findByArtist('Michael Bay'));
